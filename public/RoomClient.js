@@ -267,6 +267,8 @@ class RoomClient {
     let mediaConstraints = {}
     let audio = false
     let screen = false
+    let usr_name = document.getElementById("usr_name");
+    usr_name.innerHTML = this.name;
     switch (type) {
       case mediaType.audio:
         mediaConstraints = {

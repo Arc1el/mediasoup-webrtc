@@ -4,6 +4,7 @@ const socket = io()
 
 let producer = null
 
+roomidInput.value = "123"
 nameInput.value = 'user_' + Math.round(Math.random() * 1000)
 
 socket.request = function request(type, data = {}) {
@@ -41,7 +42,6 @@ function roomOpen() {
   reveal(startScreenButton)
   hide(stopScreenButton)
   reveal(exitButton)
-  reveal(copyButton)
   reveal(devicesButton)
   control.className = ''
   reveal(videoMedia)
@@ -87,7 +87,6 @@ function addListeners() {
     hide(control)
     hide(devicesList)
     hide(videoMedia)
-    hide(copyButton)
     hide(devicesButton)
     reveal(login)
   })

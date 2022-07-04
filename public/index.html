@@ -14,65 +14,62 @@
         <link href="modules/bootstrap.min.css" rel="stylesheet" />
         <script src="modules/bootstrap.bundle.min.js"></script>
     </head>
-    <body>
-        <div class="container">
-            <div id="login">
-                <br />
-                <i class="fas fa-server"> Room: </i><input id="roomidInput" value="123" type="text" />
-                <!--<button id="createRoom" onclick="createRoom(roomid.value)" label="createRoom">Create Room</button>-->
-                <i class="fas fa-user"> User: </i><input id="nameInput" value="user" type="text" />
-
-                <!-- 해당부분으로부터 이벤트 시작. joinroom필요-->
-                <button id="joinButton" onclick="joinRoom(nameInput.value, roomidInput.value)">
-                    <i class="fas fa-sign-in-alt"></i> Join
-                </button>
+    <body style="background: #214a80;">
+        <!-- 이벤트 발생시 사라지는 컨테이너 -->
+        <div class="container" id ="login">
+            <div class="login-dark" style="height: 695px;">
+                    <div class="form-group">
+                        <h2 class="sr-only">화상진료 시스템</h2></br>
+                        <input class="form-control" type = "text" id="roomidInput" placeholder="방번호">
+                        <input class="form-control" type = "text" id="nameInput" placeholder="유저명">
+                        <button class="btn btn-primary btn-block" id="joinButton" onclick="joinRoom(nameInput.value, roomidInput.value)">입장</button>
+                    
+                </div>
             </div>
         </div>
-
+        <!-- 이벤트 발생시 발생하는 컨테이너 -->
         <div class="container">
             <div id="control" class="hidden">
                 <br />
                 <button id="exitButton" class="hidden" onclick="rc.exit()">
-                    <i class="fas fa-arrow-left"></i> Exit
+                    <i class="fas fa-arrow-left">연결 종료</i> 
                 </button>
-                <button id="copyButton" class="hidden" onclick="rc.copyURL()">
-                    <i class="far fa-copy"></i> copy URL
-                </button>
+
                 <button id="devicesButton" class="hidden" onclick="rc.showDevices()">
-                    <i class="fas fa-cogs"></i> Devices
+                    <i class="fas fa-cogs">미디어선택</i> 
                 </button>
+                
                 <button
                     id="startAudioButton"
                     class="hidden"
-                    onclick="rc.produce(RoomClient.mediaType.audio, audioSelect.value)"
-                >
-                    <i class="fas fa-volume-up"></i> Open audio
+                    onclick="rc.produce(RoomClient.mediaType.audio, audioSelect.value)">
+                    <i class="fas fa-volume-up">오디오 전송</i> 
                 </button>
                 <button id="stopAudioButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.audio)">
-                    <i class="fas fa-volume-up"></i> Close audio
+                    <i class="fas fa-volume-up">오디오 중지</i> 
                 </button>
                 <button
                     id="startVideoButton"
                     class="hidden"
                     onclick="rc.produce(RoomClient.mediaType.video, videoSelect.value)"
                 >
-                    <i class="fas fa-camera"></i> Open video
+                    <i class="fas fa-camera">비디오 전송</i> 
                 </button>
                 <button id="stopVideoButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.video)">
-                    <i class="fas fa-camera"></i> Close video
+                    <i class="fas fa-camera">비디오 중지</i> 
                 </button>
                 <button id="startScreenButton" class="hidden" onclick="rc.produce(RoomClient.mediaType.screen)">
-                    <i class="fas fa-desktop"></i> Open screen
+                    <i class="fas fa-desktop">화면 전송</i> 
                 </button>
                 <button id="stopScreenButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.screen)">
-                    <i class="fas fa-desktop"></i> Close screen
+                    <i class="fas fa-desktop">화면 정지</i> 
                 </button>
                 <br /><br />
                 <div id="devicesList" class="hidden">
-                    <i class="fas fa-microphone"></i> Audio:
+                    <i class="fas fa-microphone">오디오 기기 선택:</i> 
                     <select id="audioSelect" class="form-select" style="width: auto"></select>
                     <br />
-                    <i class="fas fa-video"></i> Video:
+                    <i class="fas fa-video">비디오 기기 선택:</i> 
                     <select id="videoSelect" class="form-select" style="width: auto"></select>
                 </div>
                 <br />
@@ -81,15 +78,17 @@
 
         <div class="container">
             <div id="videoMedia" class="hidden">
-                <h4><i class="fab fa-youtube"></i> Local media</h4>
-                <div id="localMedia" class="containers">
-                    <!--<video id="localVideo" autoplay inline class="vid"></video>-->
-                    <!--<video id="localScreen" autoplay inline class="vid"></video>-->
+                <div id="overlay">
+                    <div id="content">
+                        <div id="localMedia" class="containers"><h4><i id="usr_name" class="fab fa-youtube"></i></h4></div>
+                    </div>
                 </div>
-                <br />
-                <h4><i class="fab fa-youtube"></i> Remote media</h4>
-                <div id="remoteVideos" class="containers"></div>
-                <div id="remoteAudios"></div>
+                <div id="others">
+                    <div id="content">
+                        <div id="remoteVideos" class="containers"><h4><i class="fab fa-youtube">Users</i></h4></div>
+                        <div id="remoteAudios"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

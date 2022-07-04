@@ -1,25 +1,15 @@
 * {
   font-family: Verdana;
-}
-
-body {
-  background-image: url('bg.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.containers {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
-  row-gap: 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   display: flex;
+}
+
+.container #control{
+  z-index:9999;
 }
 
 .vid {
@@ -31,4 +21,142 @@ body {
 
 .hidden {
   display: none;
+}
+
+.login-dark {
+  height: 1000px;
+  width : 100%;
+  font-size: 0.7em;
+  background-size: cover;
+  position: relative;
+}
+
+.login-dark div {
+  width: 60%;
+  background-color: #1e2833;
+  padding: 40px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.7em;
+  color: #fff;
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+}
+
+
+.login-dark div .form-control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #434a52;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  font-size: 0.7em;
+  color: inherit;
+}
+
+.login-dark div .btn-primary {
+  background: #214a80;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  font-size: 0.7em;
+  outline: none;
+}
+#control{
+  height: auto;
+}
+
+#control button {
+  background: #1e2833;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  width: 14vw;
+  font-size: 0.7em;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+}
+
+.login-dark div .btn-primary:hover, .login-dark div .btn-primary:active {
+  background: #214a80;
+  outline: none;
+}
+
+.login-dark div .forgot {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.login-dark div .forgot:hover, .login-dark div .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.login-dark div .btn-primary:active {
+  transform: translateY(1px);
+}
+
+#control{
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+#overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px; 
+  z-index: 9009;
+}
+
+#overlay #content #localMedia{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 9010; 
+}
+
+#videoMedia{
+  height: 0;
+  width: 100%;
+}
+
+#localMedia{
+  display: inline-block;
+}
+
+#localMedia .vid{
+  float: right;
+  height: 15vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+}
+
+#others{
+  width: 100%;
+}
+
+#remoteVideos{
+  display: inline-block;
+  width: 100%;
+}
+
+#remoteVideos .vid{
+  height: 20vh;
+  padding: 1vh;
+}
+
+i{
+  color: white;
 }
