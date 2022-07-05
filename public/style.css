@@ -6,6 +6,8 @@
 
 .container {
   display: flex;
+  text-align: center;
+  align-items: center;
 }
 
 .container #control{
@@ -23,10 +25,14 @@
   display: none;
 }
 
+.login-dark h2{
+  font-size: 3vw;
+}
+
 .login-dark {
   height: 1000px;
   width : 100%;
-  font-size: 0.7em;
+  font-size: 3vw;
   background-size: cover;
   position: relative;
 }
@@ -75,12 +81,12 @@
 #control button {
   background: #1e2833;
   border: none;
-  border-radius: 3vw;
-  padding: 11px;
-  width: 6vw;
-  height: 6vw;
+  border-radius: 8vw;
+  margin : 1vh;
+  width: 8vh;
+  height: 8vh;
   font-size: 0.7em;
-  box-shadow: none;
+  box-shadow : 0 0 0.5em black;
   text-shadow: none;
   outline: none;
 }
@@ -109,9 +115,14 @@
 }
 
 #control{
+  position: fixed;
+  bottom: 15vh;
   margin: 0;
   padding: 0;
   height: 3vh;
+  width: 80%;
+  left: 10%;
+  right: 10%;
 }
 
 #overlay {
@@ -137,11 +148,13 @@
   display: inline-block;
 }
 
+
 #localMedia .vid{
   float: right;
-  height: 20vh;
+  height: 18vw;
   margin-left: 1vh;
   margin-right: 1vh;
+  margin-bottom: 15vh;
   box-shadow : 0 0 0.5em black;
 }
 
@@ -156,6 +169,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 #remoteVideos .vid{
@@ -169,6 +183,7 @@ i{
 
 #content i{
   float: right;
+  font-size: 3vw;
   padding : 1vh;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
@@ -176,4 +191,23 @@ i{
 #others{
   width: 100%;
   height: 100%;
+}
+
+#control #exitButton{
+  background: #f2f2f2;
+}
+
+#exitButton svg{
+  color: black;
+}
+
+#settings{
+  position: fixed;
+  top: 7%;
+  right: 7%;
+  width: 10vw;
+  height: 10vw;
+  margin-right: 5vw;
+  background: none;
+  border: none;
 }
