@@ -633,6 +633,14 @@ class RoomClient {
     }
   }
 
+  showSettings() {
+    reveal(settingDiv)
+  }
+
+  hideSettings(){
+    hide(settingDiv)
+  }
+
   handleFS(id) {
     let videoPlayer = document.getElementById(id)
     videoPlayer.addEventListener('fullscreenchange', (e) => {
