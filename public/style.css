@@ -75,9 +75,10 @@
 #control button {
   background: #1e2833;
   border: none;
-  border-radius: 4px;
+  border-radius: 3vw;
   padding: 11px;
-  width: 14vw;
+  width: 6vw;
+  height: 6vw;
   font-size: 0.7em;
   box-shadow: none;
   text-shadow: none;
@@ -110,7 +111,7 @@
 #control{
   margin: 0;
   padding: 0;
-  height: auto;
+  height: 3vh;
 }
 
 #overlay {
@@ -138,9 +139,10 @@
 
 #localMedia .vid{
   float: right;
-  height: 15vh;
+  height: 20vh;
   margin-left: 1vh;
   margin-right: 1vh;
+  box-shadow : 0 0 0.5em black;
 }
 
 #others{
@@ -148,15 +150,30 @@
 }
 
 #remoteVideos{
+  position: absolute;
   display: inline-block;
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100%;
 }
 
 #remoteVideos .vid{
-  height: 20vh;
-  padding: 1vh;
+  width: 100%;
+  height: 100%;
 }
 
 i{
   color: white;
+}
+
+#content i{
+  float: right;
+  padding : 1vh;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#others{
+  width: 100%;
+  height: 100%;
 }
