@@ -64,7 +64,7 @@ async function createWorkers() {
   /** 해당부분은 다음과 같음
     numWorkers: Object.keys(os.cpus()).length,
     컴퓨터 코어정보, 코어갯수(length)
-   */
+  */
 
   // 해당부분은 아마도 사용자의 코어갯수를 활용하여 worker를 만드는 부분인듯?
   for (let i = 0; i < numWorkers; i++) {

@@ -131,7 +131,8 @@ module.exports = class Room {
         })
       }.bind(this)
     )
-
+    //params print
+    console.log("파라미터 : " + params);
     return params
   }
 

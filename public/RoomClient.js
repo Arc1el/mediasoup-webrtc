@@ -420,6 +420,8 @@ class RoomClient {
         this.consumers.set(consumer.id, consumer)
 
         let elem
+        //stream data 
+        console.log("스트림데이터 : " + stream);
         if (kind === 'video') {
           elem = document.createElement('video')
           elem.srcObject = stream
@@ -475,6 +477,8 @@ class RoomClient {
 
     const stream = new MediaStream()
     stream.addTrack(consumer.track)
+
+    console.log("getConsumeStream에 의해 리턴된 스트림 : " + stream)
 
     return {
       consumer,
