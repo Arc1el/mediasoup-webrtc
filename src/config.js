@@ -70,10 +70,14 @@ module.exports = {
     webRtcTransport: {
       listenIps: [
         {
-          ip: '0.0.0.0' || getLocalIp() || '192.168.0.2',
-          announcedIp: getLocalIp() || '192.168.0.2' || '192.168.45.98' // replace by public IP address
+          //ip: '0.0.0.0' || getLocalIp() || '192.168.0.2',
+          //announcedIp: getLocalIp() || '192.168.0.2' || '192.168.45.98' // replace by public IP address
+
           //ip: "0.0.0.0",
           //announcedIp: "127.0.0.1" || getLocalIp()
+
+          ip: '0.0.0.0' || getLocalIp(),
+          announcedIp: getLocalIp() || "127.0.0.1"
         }
       ],
       maxIncomingBitrate: 1500000,

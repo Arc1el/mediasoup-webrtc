@@ -35,16 +35,17 @@ function joinRoom(name, room_id) {
 
 function roomOpen() {
   login.className = 'hidden'
-  reveal(startAudioButton)
+  hide(startAudioButton)
   hide(stopAudioButton)
-  reveal(startVideoButton)
+  hide(startVideoButton)
   hide(stopVideoButton)
-  reveal(startScreenButton)
+  hide(startScreenButton)
   hide(stopScreenButton)
-  reveal(exitButton)
+  hide(exitButton)
   reveal(devicesButton)
+  reveal(mainDiv)
   control.className = ''
-  reveal(videoMedia)
+  hide(videoMedia)
 }
 
 function hide(elem) {

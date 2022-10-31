@@ -19,8 +19,8 @@
         <div class="container" id ="login">
             <div class="login-dark" style="height: 695px;">
                     <div class="form-group">
-                        <h2 class="sr-only">모니터링 시스템</h2></br>
-                        <input class="form-control" type = "text" id="roomidInput" placeholder="방번호" style="display: none;">
+                        <h2 class="sr-only">화상진료 시스템</h2></br>
+                        <input class="form-control" type = "text" id="roomidInput" placeholder="방번호">
                         <input class="form-control" type = "text" id="nameInput" placeholder="유저명">
                         <button class="btn btn-primary btn-block" id="joinButton" onclick="joinRoom(nameInput.value, roomidInput.value)">입장</button>
                     
@@ -30,13 +30,7 @@
         <!-- 이벤트 발생시 발생하는 컨테이너 -->
         <div class="container">
             <div id="control" class="hidden">
-                <button id="exitButton2" class="hidden" onclick="rc.exit()">
-                    <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
-                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
-                        </svg>
-                    </i>
-                </button>
+                <br />
                 <button id="exitButton" class="hidden" onclick="rc.exit()">
                     <i>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
@@ -44,6 +38,9 @@
                         </svg>
                     </i>
                 </button>
+                
+                
+                
                 <button
                     id="startAudioButton"
                     class="hidden"
@@ -107,16 +104,17 @@
                 
             </div>
         </div>
-        <div class="containerVid" width = "50%">
+
+        <div class="container">
             <div id="videoMedia" class="hidden">
                 <div id="overlay">
-                    <div id="content" width = "50%">
-                        <div id="localMedia" class="containers"><h4><i id="usr_name" class="fab fa-youtube" style="display: none;"></i></h4></div>
+                    <div id="content">
+                        <div id="localMedia" class="containers"><h4><i id="usr_name" class="fab fa-youtube"></i></h4></div>
                     </div>
                 </div>
                 <div id="others">
                     <div id="content">
-                        <div id="remoteVideos" class="containers"></div></br>
+                        <div id="remoteVideos" class="containers"></div>
                         <div id="remoteAudios"></div>
                     </div>
                 </div>
@@ -130,7 +128,6 @@
                     </svg>
                 </i> 
             </button>
-            
             <button id="devicesButton" class="hidden" onclick="rc.showDevices()" style="">
                 <i>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
@@ -146,11 +143,6 @@
                 <i class="fas fa-video">비디오 기기 선택:</i> 
                 <select id="videoSelect" class="form-select" style="width: auto"></select>
             </div>
-        
-        </div>
-        <div id="mainDiv" class="hidden">
-            <h1>contents div</h1>
-            <div style="width : 100%; color : red; left:5vw; right:5vh;"> hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello</div>
         </div>
     </body>
 

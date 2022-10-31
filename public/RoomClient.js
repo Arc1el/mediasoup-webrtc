@@ -33,6 +33,7 @@ class RoomClient {
 
     this.consumers = new Map()
     this.producers = new Map()
+    this.toggle_counter = 0;
 
     console.log('Mediasoup client', mediasoupClient)
 
@@ -428,8 +429,9 @@ class RoomClient {
           elem.id = consumer.id
           elem.playsinline = false
           elem.autoplay = true
-          elem.className = 'vid'
+          elem.className = 'vid'      
           this.remoteVideoEl.appendChild(elem)
+          
           this.handleFS(elem.id)
         } else {
           elem = document.createElement('audio')
@@ -638,7 +640,33 @@ class RoomClient {
   }
 
   showSettings() {
-    reveal(settingDiv)
+    //reveal(settingDiv)
+    if(this.toggle_counter%2 == 0){
+      reveal(startAudioButton)
+      hide(stopAudioButton)
+      reveal(startVideoButton)
+      hide(stopVideoButton)
+      reveal(startScreenButton)
+      hide(stopScreenButton)
+      reveal(exitButton)
+      reveal(devicesButton)
+      control.className = ''
+      reveal(videoMedia)
+      this.toggle_counter += 1
+    }
+    else{
+      hide(startAudioButton)
+      hide(stopAudioButton)
+      hide(startVideoButton)
+      hide(stopVideoButton)
+      hide(startScreenButton)
+      hide(stopScreenButton)
+      hide(exitButton)
+      reveal(devicesButton)
+      control.className = ''
+      hide(videoMedia)
+      this.toggle_counter += 1
+    }
   }
 
   hideSettings(){
