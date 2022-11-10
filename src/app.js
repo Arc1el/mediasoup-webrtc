@@ -5,6 +5,7 @@ const https = require('httpolyglot')
 const fs = require('fs')
 const mediasoup = require('mediasoup')
 const path = require('path')
+var cors = require('cors');
 
 //여기서부터 js파일을 모듈로 불러옴. 모듈을 불러오는것은 실행이 아님에 유의
 const config = require('./config')
@@ -23,6 +24,8 @@ const io = require('socket.io')(httpsServer)
 
 //퍼블릭 폴더 설정. public 디렉토리
 app.use(express.static(path.join(__dirname, '..', 'public')))
+
+app.use(cors())
 
 //https서버 생성. config.listenport이므로 config.js의 listenport부분을 모듈로 해서 가져올 수 있음
 httpsServer.listen(config.listenPort, () => {

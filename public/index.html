@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link rel="stylesheet" href="/style.css" />
 
         <script src="socket.io/socket.io.js"></script>
@@ -13,14 +13,37 @@
 
         <link href="modules/bootstrap.min.css" rel="stylesheet" />
         <script src="modules/bootstrap.bundle.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     </head>
-    <body style="background: #214a80;">
+    <body>
+        <script type="text/javascript">
+        </script>
         <!-- 이벤트 발생시 사라지는 컨테이너 -->
         <div id="mainDiv" class="hidden">
-            <h1>contents div</h1>
-            <h2>asdfasdfasdfjas;lkfdjalsfkja;sdklfjas;lkfjdslfkjasasdfljsdfakljfdsaljk;fadsljkdfakljfadkjlafdkjlajkfl;fsajlkafdskjl;;fkljsda;flkjadsf</h2>
+            <div id="main_search">
+                <p>rfid : </p> <input id="rfid_input"></input>
+                <p>동물이름 : </p> <input id="aniname_input"></input>
+                <p>보호자이름 : </p> <input id="pname_input"></input>
+                <button id="search_button" onclick="search_func()">search</button>
+            </div>
+            <div id="main_status">
+            </div>
+            <div id="main_table">
+                <table class="table test">
+                    <tr>
+                        <th>날짜/시간</th>
+                        <th>호흡수</th>
+                        <th>체온</th>
+                        <th>RFID</th>
+                    </tr>
+            
+                    <tbody id="table1">
+            
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="container" id ="login">
+        <div class="container" id ="login" >
             <div class="login-dark" style="height: 695px;">
                 <div class="form-group">
                     <h2 class="sr-only">모니터링 시스템</h2></br>
@@ -37,7 +60,7 @@
             </div>
         </div>
         <!-- 이벤트 발생시 발생하는 컨테이너 -->
-        <div class="container">
+        <div class="container" style="background-color: rgb(246, 245, 245);">
             <div id="control" class="hidden">
                 <button id="exitButton2" class="hidden" onclick="rc.exit()">
                     <i>

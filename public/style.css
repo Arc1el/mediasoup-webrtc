@@ -11,7 +11,7 @@
 }
 
 .container #control{
-  z-index:9996;
+  z-index : 999;
 }
 
 .vid {
@@ -39,7 +39,7 @@
 
 .login-dark div {
   width: 60%;
-  background-color: #1e2833;
+  background-color: #D3E0EA;
   padding: 40px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@
   top: 50%;
   left: 50%;
   font-size: 0.7em;
-  color: #fff;
+  color: #1687A7;
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
@@ -64,7 +64,7 @@
 }
 
 .login-dark div .btn-primary {
-  background: #214a80;
+  background: #276678;
   border: none;
   border-radius: 4px;
   padding: 11px;
@@ -164,7 +164,7 @@
   margin-right: 1vh;
   margin-bottom : 3vh;
   box-shadow : 0 0 0.5em black;
-  z-index: 9999;
+  z-index: -1;
 }
 
 #others{
@@ -172,12 +172,11 @@
 }
 
 #remoteVideos{
-  position: absolute;
+  position: fixed;
   display: inline-block;
   right: 0;
   top: 0;
   width: 20%;
-  z-index: -1;
   margin-top:3vh;
   margin-bottom:3vh;
   margin-right:2vw;
@@ -187,6 +186,8 @@
   width: 100%;
   height: auto;
   margin-bottom: 2vh;
+  box-shadow : 0 0 0.5em black;
+  opacity: 0.6;
 }
 
 i{
@@ -236,7 +237,6 @@ i{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999;
 }
 
 #settingDiv Button{
@@ -252,5 +252,42 @@ i{
 }
 
 #mainDiv {
-  width : 70%;
+  width : 100%;
+  padding : 2%;
+}
+
+#mainDiv div{
+  word-break:break-all;
+  background-color: #D3E0EA;
+  border-radius: 10px;
+  margin-bottom : 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  box-shadow : 0 0 0.2em grey;
+
+}
+
+#mainDiv #main_status{
+  width : 100%;
+  height : 20vh;
+}
+
+#mainDiv #main_search{
+  width : 100%;
+  height : auto;
+  background-color: #D3E0EA;
+  border-radius: 10px;
+}
+
+#mainDiv #main_table{
+  width : 100%;
+  height : auto;
+  background-color: #D3E0EA;
+  border-radius: 10px;
+}
+
+#main_search * {
+  display: inline;
 }

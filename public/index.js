@@ -21,16 +21,73 @@ socket.request = function request(type, data = {}) {
 
 let rc = null
 
+function httpGet(theUrl){
+  var http = new XMLHttpRequest();
+  var url = theUrl;
+
+  http.open("GET", url, true);
+  
+  http.onreadystatechange = function() {//Call a function when the state changes.
+  if(http.readyState == 4 && http.status == 200) {
+      res = http.responseText;
+      console.log("res : ", res);
+      result = JSON.parse(res);
+
+      var table = document.getElementById('table1')
+      for (var i=0; i < result.length; i++)
+      {
+          var row = `<tr>
+                      <td>${result[i].date}</td>
+                      <td>${result[i].breath}</td>
+                      <td>${result[i].temp}</td>
+                      <td>${result[i].rfid}</td>
+                  </tr>`
+          table.innerHTML += row
+      }
+      console.log("get the table successfully");
+      }
+  }
+  http.send(null);
+}
+
+
 function joinRoom(name, room_id) {
   if (rc && rc.isOpen()) {
     console.log('Already connected to a room')
   } else {
+    
+    httpGet("https://a54b-223-194-160-130.jp.ngrok.io/api/recent_data");
+
     initEnumerateDevices()
 
     rc = new RoomClient(localMedia, remoteVideos, remoteAudios, window.mediasoupClient, socket, room_id, name, roomOpen)
 
     addListeners()
   }
+}
+
+function search_func() {
+  rfid = document.getElementById('rfid_input').value;
+  aniname = document.getElementById('aniname_input').value;
+  pname = document.getElementById('pname_input').value;
+  console.log("rfid : ", rfid , "animal name : ", aniname, "parent name : ", pname);
+
+
+  var http = new XMLHttpRequest();
+  var url = "https://a54b-223-194-160-130.jp.ngrok.io/api/get_rfid_info";
+  params = '{"rfid" : ' + rfid + '}';
+  http.open("POST", url, true);
+  http.setRequestHeader("Content-Type", "application/json");
+  http.onreadystatechange = function() {//Call a function when the state changes.
+  if(http.readyState == 4 && http.status == 200) {
+      res = http.responseText;
+      console.log("res : ", res);
+      var table = document.getElementById('table1')
+      table.innerHTML = null;
+
+      }
+  }
+  http.send(params);
 }
 
 function roomOpen() {
