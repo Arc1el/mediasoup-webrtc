@@ -16,14 +16,23 @@
     </head>
     <body style="background: #214a80;">
         <!-- 이벤트 발생시 사라지는 컨테이너 -->
+        <div id="mainDiv" class="hidden">
+            <h1>contents div</h1>
+            <h2>asdfasdfasdfjas;lkfdjalsfkja;sdklfjas;lkfjdslfkjasasdfljsdfakljfdsaljk;fadsljkdfakljfadkjlafdkjlajkfl;fsajlkafdskjl;;fkljsda;flkjadsf</h2>
+        </div>
         <div class="container" id ="login">
             <div class="login-dark" style="height: 695px;">
-                    <div class="form-group">
-                        <h2 class="sr-only">모니터링 시스템</h2></br>
+                <div class="form-group">
+                    <h2 class="sr-only">모니터링 시스템</h2></br>
+                    <fieldset>
                         <input class="form-control" type = "text" id="roomidInput" placeholder="방번호" style="display: none;">
                         <input class="form-control" type = "text" id="nameInput" placeholder="유저명">
                         <button class="btn btn-primary btn-block" id="joinButton" onclick="joinRoom(nameInput.value, roomidInput.value)">입장</button>
-                    
+                    </fieldset>
+                    <fieldset>
+                        <input class="form-control" type = "text" id="rfid_input" placeholder="RFID" style="display: none;">
+                        <input class="form-control" type = "text" id="owner_input" placeholder="김현민">
+                    </fieldset>
                 </div>
             </div>
         </div>
@@ -97,17 +106,13 @@
                 </button>
                 <div id="settings">
                     <button id="settingsButton" onclick="rc.showSettings()">
-                        <i>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-                            </svg>
-                        </i> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M18 0c-3.17 0-6 2.115-6 5.004 0 1.025.369 2.033 1.025 2.812.023.914-.515 2.232-.996 3.188 1.3-.234 3.146-.756 3.984-1.271 4.624 1.124 7.987-1.7 7.987-4.729 0-2.906-2.848-5.004-6-5.004zm-2.502 5.754c-.41 0-.75-.34-.75-.75 0-.416.34-.75.75-.75.416 0 .75.334.75.75 0 .41-.334.75-.75.75zm2.502 0c-.416 0-.75-.34-.75-.75 0-.416.334-.75.75-.75s.75.334.75.75c0 .41-.334.75-.75.75zm2.502 0c-.416 0-.75-.34-.75-.75 0-.416.334-.75.75-.75.41 0 .75.334.75.75 0 .41-.34.75-.75.75zm-20.502 6.371c0-3.934 3.191-7.125 7.125-7.125 1.041 0 2.027.229 2.918.63.08.802.312 1.576.68 2.288-.969-.83-2.225-1.335-3.598-1.335-3.056 0-5.542 2.485-5.542 5.542s2.485 5.542 5.542 5.542c2.782 0 5.084-2.062 5.476-4.736.45-.087 1.02-.216 1.627-.384-.219 3.737-3.312 6.703-7.104 6.703-3.933 0-7.124-3.191-7.124-7.125zm11.328 7.492l2.922 4.383h-14.25l2.922-4.383c.449.282.928.519 1.431.708l-1.394 2.092h8.332l-1.394-2.092c.503-.189.982-.426 1.431-.708zm-7.37-7.492c0 1.75 1.417 3.167 3.167 3.167s3.167-1.417 3.167-3.167-1.417-3.167-3.167-3.167-3.167 1.417-3.167 3.167zm4.75 0c0 .873-.711 1.583-1.583 1.583s-1.583-.711-1.583-1.583.711-1.583 1.583-1.583 1.583.71 1.583 1.583z"/></svg>
                     </button>
                 </div>
                 
             </div>
         </div>
-        <div class="containerVid" width = "50%">
+        <div class="containerVid" width = "50%" style="z-index:999;">
             <div id="videoMedia" class="hidden">
                 <div id="overlay">
                     <div id="content" width = "50%">
@@ -147,10 +152,6 @@
                 <select id="videoSelect" class="form-select" style="width: auto"></select>
             </div>
         
-        </div>
-        <div id="mainDiv" class="hidden">
-            <h1>contents div</h1>
-            <div style="width : 100%; color : red; left:5vw; right:5vh;"> hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello</div>
         </div>
     </body>
 

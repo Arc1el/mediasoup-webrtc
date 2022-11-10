@@ -7,11 +7,14 @@ const getLocalIp = () => {
   Object.keys(ifaces).forEach((ifname) => {
     for (const iface of ifaces[ifname]) {
       // Ignore IPv6 and 127.0.0.1
+      
       if (iface.family !== 'IPv4' || iface.internal !== false) {
         continue
       }
       // Set the local ip to the first IPv4 address found and exit the loop
+      console.log(iface)
       localIp = iface.address
+      console.log(localIp)
       return
     }
   })
@@ -58,7 +61,7 @@ module.exports = {
         },
         {
           kind: 'video',
-          mimeType: 'video/VP8',
+          mimeType: 'video/h264',
           clockRate: 90000,
           parameters: {
             'x-google-start-bitrate': 1000
@@ -70,14 +73,8 @@ module.exports = {
     webRtcTransport: {
       listenIps: [
         {
-          //ip: '0.0.0.0' || getLocalIp() || '192.168.0.2',
-          //announcedIp: getLocalIp() || '192.168.0.2' || '192.168.45.98' // replace by public IP address
-
-          //ip: "0.0.0.0",
-          //announcedIp: "127.0.0.1" || getLocalIp()
-
-          ip: '0.0.0.0' || getLocalIp(),
-          announcedIp: getLocalIp() || "127.0.0.1"
+          ip: "0.0.0.0",
+          announcedIp: getLocalIp()
         }
       ],
       maxIncomingBitrate: 1500000,
