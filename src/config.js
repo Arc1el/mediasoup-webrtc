@@ -23,10 +23,10 @@ const getLocalIp = () => {
 
 //모듈로 보내는 세팅값들
 module.exports = {
-  listenIp: '0.0.0.0',
+  listenIp: "0.0.0.0",
   listenPort: 3016,
-  sslCrt: '../ssl/cert.pem',
-  sslKey: '../ssl/key.pem',
+  sslCrt: '/cert.pem',
+  sslKey: '/key.pem',
 
   mediasoup: {
     // Worker settings
@@ -74,7 +74,8 @@ module.exports = {
       listenIps: [
         {
           ip: "0.0.0.0",
-          announcedIp: getLocalIp()
+          //announcedIp: getLocalIp()
+          announcedIp: "arc1el.iptime.org"
         }
       ],
       maxIncomingBitrate: 1500000,

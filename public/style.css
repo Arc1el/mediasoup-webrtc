@@ -1,7 +1,12 @@
 * {
-  font-family: Verdana;
+  font-family: 'Nanum Gothic Coding', monospace;
   margin: 0;
   padding: 0;
+}
+:root{
+  --ok_color : #13bd7e;
+  --warn_color : #ffbe4c;
+  --no_color : #f53e50;
 }
 
 .container {
@@ -38,8 +43,8 @@
 }
 
 .login-dark div {
-  width: 60%;
-  background-color: #D3E0EA;
+  width: 80%;
+  border-bottom: 3px solid #13bd7e;
   padding: 40px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
@@ -47,12 +52,17 @@
   top: 50%;
   left: 50%;
   font-size: 0.7em;
-  color: #1687A7;
-  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  color: #333A44;
+
+}
+
+.login-dark div h5{
+  font-size: 1em;
 }
 
 
 .login-dark div .form-control {
+  width: 70%;
   background: none;
   border: none;
   border-bottom: 1px solid #434a52;
@@ -64,9 +74,11 @@
 }
 
 .login-dark div .btn-primary {
-  background: #276678;
+  background: #13BD7E;
   border: none;
-  border-radius: 4px;
+  width: 90%;
+  height: 5%;
+  border-radius: 30px;
   padding: 11px;
   box-shadow: none;
   margin-top: 26px;
@@ -82,6 +94,7 @@
   background: #1e2833;
   border: none;
   border-radius: 8vh;
+  font-size: 1em;
   margin : 1vh;
   width: 3vh;
   height: 3vh;
@@ -92,7 +105,7 @@
 }
 
 .login-dark div .btn-primary:hover, .login-dark div .btn-primary:active {
-  background: #214a80;
+  background: #0e9360;
   outline: none;
 }
 
@@ -258,36 +271,81 @@ i{
 
 #mainDiv div{
   word-break:break-all;
-  background-color: #D3E0EA;
-  border-radius: 10px;
   margin-bottom : 1vh;
   padding-top: 1vh;
   padding-bottom: 1vh;
   padding-left: 1vw;
   padding-right: 1vw;
-  box-shadow : 0 0 0.2em grey;
+  box-shadow: 0 6px 8px -8px grey;
 
 }
 
-#mainDiv #main_status{
+#main_status{
   width : 100%;
-  height : 20vh;
+  height: 45vw;
 }
 
-#mainDiv #main_search{
-  width : 100%;
-  height : auto;
-  background-color: #D3E0EA;
-  border-radius: 10px;
-}
-
-#mainDiv #main_table{
+#mainDiv #main_search, #main_table{
   width : 100%;
   height : auto;
-  background-color: #D3E0EA;
-  border-radius: 10px;
 }
 
 #main_search * {
   display: inline;
+  font-size: 1em;
 }
+#main_search input{
+  width : 83%;
+  border : 1px grey;
+  outline : none;
+  
+}
+#main_search button{
+  width : 14%;
+  height : 4vh;
+  background: #877af5;
+  border: none;
+  border-radius: 20px;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 1em;
+  outline: none;
+  color: white;
+  font-weight: bold;
+}
+
+th, td, p, h2, input {
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+th, td, table{
+  text-align: center;
+}
+
+#monitor_breath_div {
+  width: 100%;
+}
+
+#main_status div{
+  display: inline-block;
+  width : 32%;
+  height : 3%;
+  box-shadow: none;
+}
+
+#monitor_div{
+  border: none;
+  outline: none;
+  
+}
+
+.individual_div{
+  display: inline-block;
+  margin: 4px;
+  padding: 5px;
+  width : 30%;
+  height: 13%;
+  background-color: #5c818a;
+  border : 1px;
+  border-radius: 40px;
+}
+
